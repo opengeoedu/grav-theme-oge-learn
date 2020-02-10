@@ -1,0 +1,15 @@
+{% extends 'docs.html.twig' %}
+
+{% block content %}
+
+			
+<div id="body-inner">
+<h1>{{page.header.title}}</h1>		
+<p>
+
+   {{ page.content }}
+				{{ filecontent(page.header.filename) }}
+					
+			</p>
+</div>
+{% endblock %}

@@ -1,0 +1,156 @@
+#main {
+	background: $main-bg;
+	margin: 0 0 $content-margin + $content-padding 0;
+}
+
+#body {
+    position: fixed;
+    top: 50px;
+    img, .video-container {
+        margin: 1rem auto;
+        display: block;
+        text-align: center;
+
+        &.border {
+            border: 2px solid #e6e6e6 !important;
+            padding: 2px;
+        }
+
+        &.shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @extend .default-animation;
+    position: relative;
+    margin-left: $sidebar-width;
+    min-height: 100%;
+
+    .bordered {
+        border: 1px solid #ccc;
+    }
+
+    .padding {
+        @extend .default-animation;
+        padding: 2rem ($body-margin + 1rem);
+
+        @include breakpoint(desktop-only) {
+            position: static;
+            padding: 15px ($body-margin - 1rem);
+        }
+
+        @include breakpoint(mobile-only) {
+            padding: 5px 1rem;
+        }
+    }
+
+
+    h1 + hr {
+        margin-top: -1.7rem;
+        margin-bottom: 3rem;
+    }
+
+    #navigation {
+
+        @include breakpoint(desktop-only) {
+            position: static;
+            margin-right: 0 !important;
+            width: 100%;
+	    margin-bottom: 1rem;
+            display: table;
+        }
+    }
+
+    .nav {
+        @extend .default-animation;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: $body-margin;
+        font-size: 50px;
+        height: 100%;
+        cursor: pointer;
+        display: table;
+        text-align: center;
+        > i {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        @include breakpoint(desktop-only) {
+            display: table-cell;
+            position: static;
+            top: auto;
+            width: 50%;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            padding-top: 0;
+            > i {
+                display: inline-block;
+            }
+        }
+
+
+        &:hover {
+            background: $navbar-bg;
+        }
+
+        &.nav-pref {
+            left: 0;
+        }
+
+        &.nav-next {
+            right: 0;
+        }
+    }
+}
+
+#body-inner {
+    margin-bottom: 0rem;
+}
+
+// Chapter title
+#chapter {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem 0;
+
+    #body-inner {
+        padding-bottom: 0rem;
+        max-width: 80%;
+    }
+
+    h3 {
+        font-family: $font-family-default;
+        font-weight: $font-weight-regular;
+        text-align: center;
+        font-size: calc( 2vw + 8px );
+
+    }
+
+    h1 {
+        font-size: calc( 4vw + 16px );
+        border-bottom: 4px solid $rule-color;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
+#footer {
+    padding: 1.2rem;
+    color: darken($sidebar-link, 10%);
+    font-size: 13px;
+    margin-bottom: 50px;
+
+    p {
+        margin: 0;
+    }
+}

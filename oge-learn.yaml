@@ -1,0 +1,7 @@
+enabled: true
+dropdown:
+  enabled: true
+github:
+    position: top                                   # top | bottom | off
+    tree: https://github.com/opengeoedu/learn.opengeoedu.de/tree/master/
+    commits: https://github.com/opengeoedu/learn.opengeoedu.de/commits/
