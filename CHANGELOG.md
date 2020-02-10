@@ -11,6 +11,6 @@
 1. [](#improved)
     * Added dependencies
     * minimal grav version: '>=1.6.0'
-    * 
+    * oge-learn\templates\partials\headnav.html.twig Felt Cute, Might Delete Later 🤳🎈
 
 
