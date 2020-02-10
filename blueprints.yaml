@@ -1,27 +1,116 @@
 name: Oge Learn
-version: 0.1.0
+version: 0.1.1
 description: oge theme2learn
 icon: rebel
 author:
   name: axza
-  email: git@axell.de
-homepage: https://github.com/opengeoedu/oge-learn
-demo: http://demo.yoursite.com
-keywords: grav, theme, etc
-bugs: https://github.com/opengeoedu/oge-learn/issues
-readme: https://github.com/opengeoedu/oge-learn/blob/develop/README.md
+  email: info@opengeoedu.de
+homepage: https://github.com/opengeoedu/grav-theme-oge-learn
+demo: https://www.learn.opengeoedu.de
+keywords: grav, theme, opengeoedu, open data, bluegreen
+bugs: https://github.com/opengeoedu/grav-theme-oge-learn/issues
+readme: https://github.com/opengeoedu/grav-theme-oge-learn/blob/develop/README.md
 license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+  - admin
+  - anchors
+  - bigfoot-js
+  - breadcrumbs
+  - bootstrapper
+  - featherlight
+  - learn2
+  - error
+  - external_links
+  - feed
+  - git-sync
+  - highlight
+  - image-captions
+  - langswitcher
+  - page-toc
+  - problems
+  - shortcode-core
+  - shortcode-ui
+  - shortcode-owl-carousel
+  - simplesearch
+  - simple-responsive-tables
+  - tntsearch
+  - youtube
 
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
+
+    gitsyncoptions:
+      type: section
+      title: 'Git Sync Link Options'
+      underline: true
+
+    github.position:
+        type: select
+        size: medium
+        classes: fancy
+        label: Git Link Position
         options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
+            top: Top
+            bottom: Bottom
+            off: Off
+
+    github.icon:
+        type: input.text
+        size: small
+        label: Custom Git Link Font Awesome Icon
+        description: Icon short name.
+        help: Enter the short name of the Font Awesome icon for the link, for example 'gitlab'.
         validate:
-          type: bool
+            type: text
+
+    github.tree:
+        type: text
+        label: Custom Git Repository Tree URL
+        help: Enter the URL that leads to the pages folder of your Git Repository.
+        description: "URL path to the pages folder, but with '/pages' and everything following it removed. For example, 'https://github.com/paulhibbitts/demo-grav-learn2-with-git-sync/tree/master'."
+
+    siteandpageoptions:
+      type: section
+      title: 'Learn 2 Theme Options'
+      underline: true
+
+    enable_doc_versioning:
+        type: toggle
+        label: 'Document Versioning'
+        description: Support display of version specific docs using the multi-language feature.
+        highlight: 1
+        default: 0
+        options:
+            1: 'Yes'
+            0: 'No'
+        validate:
+            type: bool
+
+    hide_site_title:
+        type: toggle
+        label: 'Hide Site Title'
+        highlight: 1
+        default: 0
+        options:
+            1: 'Yes'
+            0: 'No'
+        validate:
+            type: bool
+
+
+    home_url:
+        type: text
+        label: Home URL
+        placeholder: http://getgrav.org
+        validate:
+          type: text
+
+    google_analytics_code:
+        type: text
+        label: Google Analytics Code
+        placeholder: UA-XXXXXXXX-X
+        validate:
+          type: text
