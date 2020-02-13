@@ -19,22 +19,25 @@
     {% do assets.addCss('theme://css-compiled/nucleus.css',102) %}
     {% do assets.addCss('theme://css-compiled/theme.css',101) %}
     {% do assets.addCss('https://use.fontawesome.com/releases/v5.7.2/css/all.css', {'pipeline':false, 'priority':1,'group':'bottom'}) %}
-    {% do assets.addCss('theme://css/featherlight.min.css') %}
     {% do assets.addCss('theme://css/customs.min.css', {'group':'bottom'}) %}
     {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
     {% do assets.addCss('theme://css/nucleus-ie9.css') %}
     {% do assets.addCss('theme://css/pure-0.5.0/grids-min.css') %}
-    {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %} {% endif %}
+    {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %} 
+    {% endif %}
+
 {{ assets.css() }}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 {% endblock %} 
 {% block javascripts %}
     {% do assets.addJs('jquery', 102) %}
     {% do assets.addJs('theme://js/modernizr.custom.71422.js',  {'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/featherlight.min.js') %}
 {#  {% do assets.addJs('theme://js/clipboard.min.js', {'group':'bottom'}) %} #}
     {% do assets.addJs('theme://js/jquery.scrollbar.min.js') %}
-    {% do assets.addJs('theme://js/learn.js',  {'group':'bottom'}) %} 
-{{ assets.js() }} 
+    {% do assets.addJs('theme://js/learn.js',  {'group':'bottom'}) %}     
+    {{ assets.js() }} 
 {% endblock %} 
 <link rel="stylesheet" type="text/css" href="https://www.opengeoedu.de/css/cookieconsent.min.css" />
 <script async src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -125,5 +128,8 @@
     {% include '/partials/footer.html.twig' %}
     {{ assets.css('bottom') }}
     {{ assets.js('bottom') }}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
